@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 고도화</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/css-advanced.css">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/front-ui.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <div class="inner tac">
+            <h1 class="title">Css common<span class="sub-desc">2019</span>
+                <a href="html" class="scroll-top" title="맨 위로 이동"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z"/></svg></a>
+            </h1>
+            <div class="lnb">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="inner">
+
+                <!-- defalut -->
+                <!--<div class="section" data-name="name">-->
+                    <!--<h2 class="title circle-type">name</h2>-->
+                    <!--<div class="editer-wrap">-->
+                        <!--<div class="ex-view">-->
+                        <!--</div>-->
+
+                        <!--<ul class="mt40">-->
+                            <!--<li class="remark">&#60;!&#45;&#45;  Top &#45;&#45;&#62;</li>-->
+                            <!--<li><span class="name">.mt0</span>{margin-top:<span class="data">0</span> <span class="important">!important</span>;}</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!-- radio -->
+                <div class="section" data-name="radio">
+                    <h2 class="title circle-type">Radio custom</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Default</h3>
+                            <div style="padding:10px;" class="bg-white">
+                                <div class="radio-group">
+                                    <div class="radio">
+                                        <input type="radio" name="radio-default" id="radio1">
+                                        <span class="fake"></span>
+                                        <label for="radio1" class="label">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="radio-default" id="radio1-1">
+                                        <span class="fake"></span>
+                                        <label for="radio1-1" class="label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="mt50">Radio Group</h3>
+                            <div style="padding:10px;" class="bg-white">
+                                <div class="radio-group">
+                                    <div class="radio">
+                                        <input type="radio" name="radio-items" id="radio2">
+                                        <span class="fake"></span>
+                                        <label for="radio2" class="label">라디오 목록 1</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="radio-items" id="radio3">
+                                        <span class="fake"></span>
+                                        <label for="radio3" class="label">라디오 목록 2</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="radio-items" id="radio4">
+                                        <span class="fake"></span>
+                                        <label for="radio4" class="label">라디오 목록 3</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" name="radio-items" id="radio5">
+                                        <span class="fake"></span>
+                                        <label for="radio5" class="label">라디오 목록 4</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="mt40">
+                            <li class="remark">&#60;!-- default(rect) --&#62;</li>
+                            <li><span class="name">.radio</span> {position:<span class="data">relative</span>;display:<span class="data">inline-block</span>;}</li>
+                            <li><span class="name">.radio <span class="important">input</span>[type=<span class="data">"radio"</span>]</span> {position:<span class="data">absolute</span>;top:<span class="data">0</span>;left:<span class="data">0</span>;width:<span class="data">1px</span>;height:<span class="data">1px</span>;z-index:<span class="data">0</span>;}</li>
+                            <li><span class="name">.radio .fake </span>{position:<span class="data">absolute</span>;left:<span class="data">0</span>;top:<span class="data">0</span>;background:<span class="data">url('../images/component/radio-default.png') center center no-repeat</span>;background-size:<span class="data">contain</span>;width:<span class="data">20px</span>;height:<span class="data">20px</span>;}</li>
+                            <li><span class="name">.radio <span class="important">input</span>[type=<span class="data">"radio"</span>]:checked + .fake</span>{background:<span class="data">url('../images/component/radio-checked.png') center center no-repeat</span>;background-size:<span class="data">contain</span>;}</li>
+                            <li><span class="name">.radio .label</span> {position:<span class="data">relative</span>;display:<span class="data">block</span>;padding-left:<span class="data">24px</span>;;font-size:<span class="data">14px</span>;line-height:<span class="data">20px</span>;color:<span class="data">#303030</span>;cursor:<span class="data">pointer</span>;white-space:<span class="data"> normal</span>;word-break:<span class="data"> keep-all</span>;vertical-align:<span class="data"> -1px</span>}</li>
+
+                            <li class="remark">&#60;!-- group --&#62;</li>
+                            <li><span class="name">.radio-group .radio</span> {margin-left:<span class="data">5px;</span>}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Check-box -->
+                <div class="section" data-name="check-box">
+                    <h2 class="title circle-type">Check box custom</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Rect</h3>
+                            <div style="padding:10px;" class="bg-white">
+                                <div class="check-box">
+                                    <input type="checkbox" id="checkBox">
+                                    <span class="fake"></span>
+                                    <label for="checkBox" class="label">동의동의 동의동 의동의동의 동의 동의동의 동의 의동 의동의동의 동의동의동의 동의동의동의동의<span class="sub-desc fc-red">(필수)</span></label>
+                                </div>
+                            </div>
+
+                            <h3 class="mt50">Circle</h3>
+                            <div style="padding:10px;" class="bg-white">
+                                <div class="check-box circle-type">
+                                    <input type="checkbox" id="checkBox2">
+                                    <span class="fake"></span>
+                                    <label for="checkBox2" class="label">동의동의 동의동 의동의동의 동의 동의동의 동의 의동 의동의동의 동의동의동의 동의동의동의동의<span class="sub-desc fc-red">(필수)</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="mt40">
+                            <li class="remark">&#60;!-- default(rect) --&#62;</li>
+                            <li><span class="name">.check-box</span> {position:<span class="data">relative</span>;display:<span class="data">inline-block</span>;}</li>
+                            <li><span class="name">.check-box <span class="important">input</span>[type=<span class="data">"checkbox"</span>]</span> {position:<span class="data">absolute</span>;top:<span class="data">0</span>;left:<span class="data">0</span>;width:<span class="data">1px</span>;height:<span class="data">1px</span>;z-index:<span class="data">0</span>;}</li>
+                            <li><span class="name">.check-box .fake </span>{position:<span class="data">absolute</span>;left:<span class="data">0</span>;top:<span class="data">0</span>;background:<span class="data">url('../images/component/checkbox-default.png') center center no-repeat</span>;background-size:<span class="data">contain</span>;width:<span class="data">20px</span>;height:<span class="data">20px</span>;}</li>
+                            <li><span class="name">.check-box <span class="important">input</span>[type=<span class="data">"checkbox"</span>]:checked + .fake</span>{background:<span class="data">url('../images/component/checkbox-checked.png') center center no-repeat</span>;background-size:<span class="data">contain</span>;}</li>
+                            <li><span class="name">.check-box .label</span> {position:<span class="data">relative</span>;display:<span class="data">block</span>;padding-left:<span class="data">24px</span>;font-size:<span class="data">14px</span>;line-height:<span class="data">20px</span>;color:<span class="data">#303030</span>;cursor:<span class="data">pointer</span>;white-space:<span class="data"> normal</span>;word-break:<span class="data"> keep-all</span>;vertical-align:<span class="data"> -1px</span>}</li>
+                            <li><span class="name">.check-box .label .sub-desc</span> {font-size:<span class="data">12px</span>;margin-left<span class="data">:5px</span>;}</li>
+                            <li class="remark">&#60;!-- circle-type --&#62;</li>
+                            <li><span class="name">.check-box.circle-type .fake</span> {background:<span class="data">url('../images/component/checkbox-circle-default.png') no-repeat</span>;background-size:<span class="data">contain</span>;}</li>
+                            <li><span class="name">.check-box.circle-type <span class="important">input</span>[type=<span class="data">"checkbox"</span>]:checked + .fake</span> {background:<span class="data">url('../images/component/checkbox-circle-checked.png') no-repeat</span>;background-size:<span class="data">contain</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Location Navi -->
+                <div class="section" data-name="Location Nav">
+                    <h2 class="title circle-type">Location Nav</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Location Nav Default</h3>
+                            <div class="location-drop-navi bg-white">
+                                <ul>
+                                    <li class="empty"><a href="">Depth1</a></li>
+                                    <li class="empty"><a href="">Depth2</a></li>
+                                    <li class="empty"><a href="">Depth3</a></li>
+                                    <li class="empty"><a href="">Depth4</a></li>
+                                    <li class="empty"><a href="">Depth5</a></li>
+                                </ul>
+                            </div>
+
+                            <h3 class="mt50">Location Navi Drop sub-navi</h3>
+                            <div class="location-drop-navi bg-white">
+                                <ul>
+                                    <li class="empty"><a href="">Depth1</a></li>
+                                    <li><span>Depth2</span>
+                                        <div class="sub-navi">
+                                            <ul>
+                                                <li><a href="">Sub-navi 1</a></li>
+                                                <li><a href="">Sub-navi 2</a></li>
+                                                <li><a href="">Sub-navi 3</a></li>
+                                                <li><a href="">Sub-navi 4</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><span>Depth3</span>
+                                        <div class="sub-navi">
+                                            <ul>
+                                                <li><a href="">Sub-navi 1</a></li>
+                                                <li><a href="">Sub-navi 2</a></li>
+                                                <li><a href="">Sub-navi 3</a></li>
+                                                <li><a href="">Sub-navi 4</a></li>
+                                                <li><a href="">Sub-navi 5</a></li>
+                                                <li><a href="">Sub-navi 6</a></li>
+                                                <li><a href="">Sub-navi 7</a></li>
+                                                <li><a href="">Sub-navi 8</a></li>
+                                                <li><a href="">Sub-navi 9</a></li>
+                                                <li><a href="">Sub-navi 10</a></li>
+                                                <li><a href="">Sub-navi 11</a></li>
+                                                <li><a href="">Sub-navi 12</a></li>
+                                                <li><a href="">Sub-navi 13</a></li>
+                                                <li><a href="">Sub-navi 14</a></li>
+                                                <li><a href="">Sub-navi 15</a></li>
+                                                <li><a href="">Sub-navi 16</a></li>
+                                                <li><a href="">Sub-navi 17</a></li>
+                                                <li><a href="">Sub-navi 18</a></li>
+                                                <li><a href="">Sub-navi 19</a></li>
+                                                <li><a href="">Sub-navi 20</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><span>Depth4</span>
+                                        <div class="sub-navi">
+                                            <ul>
+                                                <li><a href="">Sub-navi 1</a></li>
+                                                <li><a href="">Sub-navi 2</a></li>
+                                                <li><a href="">Sub-navi 3</a></li>
+                                                <li><a href="">Sub-navi 4</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="empty"><a href="">Depth5</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <ul class="mt40">
+                            <li class="remark">&#60;!--  Top --&#62;</li>
+                            <li><span class="name">.mt0</span>{margin-top:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span>:after</span> {content:<span class="data">''</span>;clear:<span class="data">both</span>;display:<span class="data">block</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span></span> {line-height:<span class="data">1</span>;font-size:<span class="data">0</span>;margin:<span class="data">0</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span></span> {position:<span class="data">relative</span>;float:<span class="data">left</span>;font-size:<span class="data">14px</span>;line-height:<span class="data">1.4</span>;padding-right:<span class="data">17px</span>;margin:<span class="data">5px 7px 5px 5px}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span>.empty </span> {padding-right:<span class="data">0</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span>.empty:after </span> {display:<span class="data">none</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span>:after </span> {content:<span class="data">''</span>;position:<span class="data">absolute</span>;right:<span class="data">0</span>;top:<span class="data">3px</span>;width:<span class="data">12px</span>;height:<span class="data">12px</span>;background:<span class="data">url('../images/icons/icon-top-circle-arrow.png') no-repeat</span>;background-size:<span class="data">contain</span>;-webkit-transform:<span class="data">rotate(0deg)</span>;-ms-transform:<span class="data">rotate(0deg)</span>;transform:<span class="data">rotate(0deg)</span>;-webkit-transition:<span class="data"> -webkit-transform .3s</span>;transition:<span class="data"> -webkit-transform .3s</span>;-o-transition:<span class="data"> transform .3s</span>;transition:<span class="data"> transform .3s</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span>:hover:after</span> {-webkit-transform:<span class="data">rotate(180deg)</span>;-ms-transform:<span class="data">rotate(180deg)</span>;transform:<span class="data">rotate(180deg)</span>;-webkit-transition:<span class="data"> -webkit-transform .3s</span>;transition:<span class="data"> -webkit-transform .3s</span>;-o-transition:<span class="data"> transform .3s</span>;transition:<span class="data"> transform .3s</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span> + <span class="important">li</span> {padding-left:<span class="data">18px</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span> + <span class="important">li</span>:before </span> {content:<span class="data">''</span>;position:<span class="data">absolute</span>;left:<span class="data">0</span>;top:<span class="data">50%</span>;-webkit-transform:<span class="data">translateY(-50%) rotate(360deg)</span>;-ms-transform:<span class="data">translateY(-50%) rotate(360deg)</span>;transform:<span class="data">translateY(-50%) rotate(360deg)</span>;width:<span class="data">6px</span>;height:<span class="data">6px</span>;background:<span class="data">url('../images/icons/icon-left-arrow.png') no-repeat</span>;background-size:<span class="data">contain</span>;opacity:<span class="data">.4}
+                            <li><span class="name">.location-drop-navi .sub-navi </span> {display:<span class="data">none</span>;position:<span class="data">absolute</span>;min-width:<span class="data">100%</span>;top:<span class="data">calc(100% - 1px)</span>;left:<span class="data">50%</span>;-webkit-transform:<span class="data">translateX(-50%)</span>;-ms-transform:<span class="data">translateX(-50%)</span>;transform:<span class="data">translateX(-50%)</span>;max-height:<span class="data">200px</span>;overflow:<span class="data">hidden</span>;overflow-y:<span class="data">auto</span>;border:<span class="data">2px solid #303030</span>;background:<span class="data">#fff</span>;color:<span class="data">#303030</span>;padding:<span class="data">10px</span>;z-index:<span class="data">2</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span> > <span class="important">span</span></span> {color:<span class="data">#999</span>;}
+                            <li><span class="name">.location-drop-navi .sub-navi > <span class="important">ul</span> > <span class="important">li</span></span> {white-space:<span class="data">nowrap</span>;}
+                            <li><span class="name">.location-drop-navi > <span class="important">ul</span> > <span class="important">li</span>:hover .sub-navi</span> {display:<span class="data">block</span>;}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Font-Size -->
+                <div class="section" data-name="Font-Size">
+                    <h2 class="title circle-type">Font-Size</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Size</h3>
+                            <p class="fs12 mt10">글자크기 12</p>
+                            <p class="fs13 mt10">글자크기 13</p>
+                            <p class="fs14 mt10">글자크기 14</p>
+                            <p class="fs15 mt10">글자크기 15</p>
+                            <p class="fs16 mt10">글자크기 16</p>
+                            <p class="fs17 mt10">글자크기 17</p>
+                            <p class="fs18 mt10">글자크기 18</p>
+                            <p class="fs19 mt10">글자크기 19</p>
+                            <p class="fs20 mt10">글자크기 20</p>
+                            <p class="fs21 mt10">글자크기 21</p>
+                            <p class="fs22 mt10">글자크기 22</p>
+                            <p class="fs23 mt10">글자크기 23</p>
+                            <p class="fs24 mt10">글자크기 24</p>
+                        </div>
+
+                        <ul class="mt40">
+                            <li><span class="name">.fs12</span>{font-size:<span class="data">12px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs13</span>{font-size:<span class="data">13 px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs14</span>{font-size:<span class="data">14px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs15</span>{font-size:<span class="data">15px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs16</span>{font-size:<span class="data">16px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs17</span>{font-size:<span class="data">17px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs18</span>{font-size:<span class="data">18px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs19</span>{font-size:<span class="data">19px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs20</span>{font-size:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs21</span>{font-size:<span class="data">21px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs22</span>{font-size:<span class="data">22px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs23</span>{font-size:<span class="data">23px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fs24</span>{font-size:<span class="data">24px</span> <span class="important">!important</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Font-color -->
+                <div class="section" data-name="Font-color">
+                    <h2 class="title circle-type"> Font-color</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Color</h3>
+                            <p class="fc-blue fs16 mt10">글자색 파랑</p>
+                            <p class="fc-yellow fs16 mt10">글자색 노랑</p>
+                            <p class="fc-red fs16 mt10">글자색 빨강</p>
+                            <p class="fc-grey fs16 mt10">글자색 회색</p>
+                            <p class="fc-black fs16 mt10">글자색 검정색</p>
+                            <p class="fc-white fs16 mt10">글자색 흰색</p>
+                        </div>
+
+                        <ul class="mt40">
+                            <li><span class="name">.fc-blue</span>{color:<span class="data">#4eadff</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fc-yellow</span>{color:<span class="data">#ffdc00</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fc-red</span>{color:<span class="data">#ff3f00</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fc-grey</span>{color:<span class="data">#9A9A9A</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fc-black</span>{color:<span class="data">#303030</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.fc-white</span>{color:<span class="data">#fff</span> <span class="important">!important</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="section" data-name="Title">
+                    <h2 class="title circle-type">Title</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h1 class="tit"><span>제목1제목1제목1 제목1제목1제목 1제목1제목1제목1 목1제목1제목1제 목1제목 1제목1제목1</span><span class="tit-desc">설명 설명설명 설명설명 설명설 명설명 설명설명설명설  명설명설명설명설명 설명설명설명설명설명설 명설명설명설명설명 설명설명설명 설명설명설 설명설명설명</span></h1>
+                            <p class="sub-desc mt10">※ 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명 보조 설명</p>
+                            <h2 class="tit mt10">제목2<span class="tit-desc">설명</span></h2>
+                            <p class="sub-desc mt10">※ 보조 설명</p>
+                            <h3 class="tit mt10">제목3<span class="tit-desc">설명</span></h3>
+                            <p class="sub-desc mt10">※ 보조 설명</p>
+                            <h4 class="tit mt10">제목4<span class="tit-desc">설명</span></h4>
+                            <p class="sub-desc mt10">※ 보조 설명</p>
+                            <h5 class="tit mt10">제목5<span class="tit-desc">설명</span></h5>
+                            <p class="sub-desc mt10">※ 보조 설명</p>
+                            <h6 class="tit mt10">제목6<span class="tit-desc">설명</span></h6>
+                            <p class="sub-desc mt10">※ 보조 설명</p>
+                        </div>
+
+                        <ul class="mt40">
+                            <li class="remark">&#60;!-- common --&#62;</li>
+                            <li><span class="name">.sub-desc</span>{font-size:<span class="data">14px</span>;font-weight:<span class="data">400</span>;color:<span class="data">#999</span>;line-height:<span class="data">1.4</span>;}</li>
+                            <li><span class="name">.tit > <span class="important">span</span></span>{line-height:<span class="data">1.6</span>;vertical-align:<span class="data">top</span>;}</li>
+                            <li><span class="name">.tit > .tit-desc</span>{font-weight:<span class="data">400</span>;color:<span class="data">#ccc</span>;margin-left:<span class="data">10px</span>;word-break: <span class="data">keep-all</span>;line-height:<span class="data">1</span>;vertical-align:<span class="data">middle</span>;}</li>
+                            <li class="remark">&#60;!-- title --&#62;</li>
+                            <li><span class="important">h1</span><span class="name">.tit</span>{font-size:<span class="data">22px</span>;font-weight:<span class="data">900</span>;}</li>
+                            <li><span class="important">h2</span><span class="name">.tit</span>{font-size:<span class="data">20px</span>;font-weight:<span class="data">900</span>;}</li>
+                            <li><span class="important">h3</span><span class="name">.tit</span>{font-size:<span class="data">18px</span>;font-weight:<span class="data">600</span>;}</li>
+                            <li><span class="important">h4</span><span class="name">.tit</span>{font-size:<span class="data">16px</span>;font-weight:<span class="data">600</span>;}</li>
+                            <li><span class="important">h5</span><span class="name">.tit</span>{font-size:<span class="data">14px</span>;font-weight:<span class="data">400</span>;}</li>
+                            <li><span class="important">h6</span><span class="name">.tit</span>{font-size:<span class="data">12px</span>;font-weight:<span class="data">200</span>;}</li>
+                            <li class="remark">&#60;!-- tit-desc --&#62;</li>
+                            <li><span class="important">h1</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">16px</span>;}</li>
+                            <li><span class="important">h2</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">16px</span>;}</li>
+                            <li><span class="important">h3</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">14px</span>;}</li>
+                            <li><span class="important">h4</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">14px</span>;}</li>
+                            <li><span class="important">h5</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">12px</span>;}</li>
+                            <li><span class="important">h6</span><span class="name">.tit > .tit-desc</span>{font-size:<span class="data">12px</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Margin -->
+                <div class="section" data-name="Margin">
+                    <h2 class="title circle-type">Margin</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Top</h3>
+                            <div class="blank-box wide mt0">0</div>
+                            <div class="blank-box wide mt10">10</div>
+                            <div class="blank-box wide mt20">20</div>
+                            <div class="blank-box wide mt30">30</div>
+                            <div class="blank-box wide mt40">40</div>
+                            <div class="blank-box wide mt50">50</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Left</h3>
+                            <div class="blank-box ml0">0</div>
+                            <div class="blank-box ml10">10</div>
+                            <div class="blank-box ml20">20</div>
+                            <div class="blank-box ml30">30</div>
+                            <div class="blank-box ml40">40</div>
+                            <div class="blank-box ml50">50</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Right</h3>
+                            <div class="blank-box mr50">50</div>
+                            <div class="blank-box mr40">40</div>
+                            <div class="blank-box mr30">30</div>
+                            <div class="blank-box mr20">20</div>
+                            <div class="blank-box mr10">10</div>
+                            <div class="blank-box mr0">0</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Bottom</h3>
+                            <div class="blank-box wide mb50">50</div>
+                            <div class="blank-box wide mb40">40</div>
+                            <div class="blank-box wide mb30">30</div>
+                            <div class="blank-box wide mb20">20</div>
+                            <div class="blank-box wide mb10">10</div>
+                            <div class="blank-box wide mb0">0</div>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Top --&#62;</li>
+                            <li><span class="name">.mt0</span>{margin-top:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mt10</span>{margin-top:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mt20</span>{margin-top:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mt30</span>{margin-top:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mt40</span>{margin-top:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mt50</span>{margin-top:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Right --&#62;</li>
+                            <li><span class="name">.mr0</span>{margin-right:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mr10</span>{margin-right:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mr20</span>{margin-right:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mr30</span>{margin-right:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mr40</span>{margin-right:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mr50</span>{margin-right:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Bottom --&#62;</li>
+                            <li><span class="name">.mb0</span>{margin-bottom:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mb10</span>{margin-bottom:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mb20</span>{margin-bottom:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mb30</span>{margin-bottom:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mb40</span>{margin-bottom:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.mb50</span>{margin-bottom:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Left --&#62;</li>
+                            <li><span class="name">.ml0</span>{margin-left:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.ml10</span>{margin-left:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.ml20</span>{margin-left:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.ml30</span>{margin-left:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.ml40</span>{margin-left:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.ml50</span>{margin-left:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Padding -->
+                <div class="section" data-name="Padding">
+                    <h2 class="title circle-type">Padding</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Top</h3>
+                            <div class="blank-box clear pt0">0</div>
+                            <div class="blank-box clear pt10">10</div>
+                            <div class="blank-box clear pt20">20</div>
+                            <div class="blank-box clear pt30">30</div>
+                            <div class="blank-box clear pt40">40</div>
+                            <div class="blank-box clear pt50">50</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Left</h3>
+                            <div class="blank-box clear pl0">0</div>
+                            <div class="blank-box clear pl10">10</div>
+                            <div class="blank-box clear pl20">20</div>
+                            <div class="blank-box clear pl30">30</div>
+                            <div class="blank-box clear pl40">40</div>
+                            <div class="blank-box clear pl50">50</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Right</h3>
+                            <div class="blank-box clear pr50">50</div>
+                            <div class="blank-box clear pr40">40</div>
+                            <div class="blank-box clear pr30">30</div>
+                            <div class="blank-box clear pr20">20</div>
+                            <div class="blank-box clear pr10">10</div>
+                            <div class="blank-box clear pr0">0</div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Bottom</h3>
+                            <div class="blank-box clear pb50">50</div>
+                            <div class="blank-box clear pb40">40</div>
+                            <div class="blank-box clear pb30">30</div>
+                            <div class="blank-box clear pb20">20</div>
+                            <div class="blank-box clear pb10">10</div>
+                            <div class="blank-box clear pb0">0</div>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Top --&#62;</li>
+                            <li><span class="name">.pt0</span>{padding-top:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pt10</span>{padding-top:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pt20</span>{padding-top:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pt30</span>{padding-top:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pt40</span>{padding-top:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pt50</span>{padding-top:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Right --&#62;</li>
+                            <li><span class="name">.pr0</span>{padding-right:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pr10</span>{padding-right:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pr20</span>{padding-right:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pr30</span>{padding-right:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pr40</span>{padding-right:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pr50</span>{padding-right:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Bottom --&#62;</li>
+                            <li><span class="name">.pb0</span>{padding-bottom:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pb10</span>{padding-bottom:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pb20</span>{padding-bottom:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pb30</span>{padding-bottom:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pb40</span>{padding-bottom:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pb50</span>{padding-bottom:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                            <li class="remark">&#60;!--  Left --&#62;</li>
+                            <li><span class="name">.pl0</span>{padding-left:<span class="data">0</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pl10</span>{padding-left:<span class="data">10px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pl20</span>{padding-left:<span class="data">20px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pl30</span>{padding-left:<span class="data">30px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pl40</span>{padding-left:<span class="data">40px</span> <span class="important">!important</span>;}</li>
+                            <li><span class="name">.pl50</span>{padding-left:<span class="data">50px</span> <span class="important">!important</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Align -->
+                <div class="section" data-name="Align">
+                    <h2 class="title circle-type">Align</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <div class="tal">
+                                <h3>Left</h3>
+                                <div class="blank-box">.Box</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <div class="tac">
+                                <h3>Center</h3>
+                                <div class="blank-box">.Box</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <div class="tar">
+                                <h3>Right</h3>
+                                <div class="blank-box">.Box</div>
+                            </div>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Left --&#62;</li>
+                            <li><span class="name">.tal</span>{text-align:<span class="data">left</span>;}</li>
+                            <li class="remark">&#60;!--  Center --&#62;</li>
+                            <li><span class="name">.tac</span>{text-align:<span class="data">center</span>;}</li>
+                            <li class="remark">&#60;!--  Right --&#62;</li>
+                            <li><span class="name">.tar</span>{text-align:<span class="data">right</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Float layout --->
+                <div class="section" data-name="Float Layout">
+                    <h2 class="title circle-type">Layout - Row  column</h2>
+
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Width 100%</h3>
+                            <div class="row">
+                                <div class="column n1 dummy-css" >n1</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Width 50%</h3>
+                            <div class="row">
+                                <div class="column n2 dummy-css">n2</div>
+                                <div class="column n2 dummy-css">n2</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Width 33.3333%</h3>
+                            <div class="row">
+                                <div class="column n3 dummy-css">n3</div>
+                                <div class="column n3 dummy-css">n3</div>
+                                <div class="column n3 dummy-css">n3</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Width 25%</h3>
+                            <div class="row">
+                                <div class="column n4 dummy-css">n4</div>
+                                <div class="column n4 dummy-css">n4</div>
+                                <div class="column n4 dummy-css">n4</div>
+                                <div class="column n4 dummy-css">n4</div>
+                            </div>
+                        </div>
+                        <div class="ex-view">
+                            <h3>Width 20%</h3>
+                            <div class="row">
+                                <div class="column n5 dummy-css">n5</div>
+                                <div class="column n5 dummy-css">n5</div>
+                                <div class="column n5 dummy-css">n5</div>
+                                <div class="column n5 dummy-css">n5</div>
+                                <div class="column n5 dummy-css">n5</div>
+                            </div>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  row --&#62;</li>
+                            <li><span class="name">.row:after</span>{content:<span class="data">''</span>;clear:<span class="data">both</span>;display:<span class="data">block</span>;}</li>
+                            <li class="remark">&#60;!--  column --&#62;</li>
+                            <li><span class="name">.row .column</span>{float:<span class="data">left</span>;}</li>
+                            <li class="remark">&#60;!--  width --&#62;</li>
+                            <li><span class="name">.row .column.n1</span>{width:<span class="data">100%</span>;}</li>
+                            <li><span class="name">.row .column.n2</span>{width:<span class="data">50%</span>;}</li>
+                            <li><span class="name">.row .column.n3</span>{width:<span class="data">calc(100% / 3)</span>;}</li>
+                            <li><span class="name">.row .column.n4</span>{width:<span class="data">25%</span>;}</li>
+                            <li><span class="name">.row .column.n5</span>{width:<span class="data">20%</span>;}</li>
+                            <li class="remark">&#60;!--  margin --&#62;</li>
+                            <li><span class="name">.row + .row</span>{margin-top:20<span class="data">px</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button-dafault -->
+                <div class="section" data-name="Button">
+                    <h2 class="title circle-type">Button</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Default Btn</h3>
+                            <button type="button" class="btn">default</button>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  default --&#62;</li>
+                            <li><span class="name">.btn</span>{position:<span class="data">relative</span>;display:<span class="data">inline-block</span>;cursor:<span class="data">pointer</span>;background:<span class="data">#fff</span>;border:<span class="data">1px solid #dcdfe6</span>;line-height:<span class="data">1</span>;white-space:<span class="data">nowrap</span>;font-weight:<span class="data">500</span>;transition:<span class="data">.1s</span>;padding:<span class="data">12px 20px</span>;font-size:<span class="data">14px</span>;margin:<span class="data">0</span>;min-width:<span class="data">100px</span>;}</li>
+                            <li><span class="name">.btn:active</span>{top:<span class="data">1px</span>;left:<span class="data">1px</span>;}</li>
+                            <li><span class="name">.btn:hover</span>{color:<span class="data">#409eff</span>;border-color:<span class="data">#c6e2ff</span>;background-color:<span class="data">#ecf5ff</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button-size -->
+                <div class="section" data-name="Button-size">
+                    <h2 class="title circle-type">Button Size</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Size</h3>
+                            <button type="button" class="btn size-sm">small</button>
+                            <button type="button" class="btn">default</button>
+                            <button type="button" class="btn size-mid">middum</button>
+                            <button type="button" class="btn size-lg">large</button>
+                        </div>
+                        <div class="ex-view">
+                            <button type="button" class="btn size-wide">wide</button>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Size --&#62;</li>
+                            <li><span class="name">.btn.size-sm</span>{min-width:<span class="data">80px</span>;}</li>
+                            <li><span class="name">.btn.size-mid</span>{min-width:<span class="data">160px</span>;}</li>
+                            <li><span class="name">.btn.size-lg</span>{min-width:<span class="data">200px</span>;}</li>
+                            <li><span class="name">.btn.size-wide</span>{min-width:<span class="data">100%</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button-background -->
+                <div class="section" data-name="Button-background">
+                    <h2 class="title circle-type">Button Background</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Background</h3>
+                            <button type="button" class="btn">btn</button>
+                            <button type="button" class="btn bg-primary">bg-primary</button>
+                            <button type="button" class="btn bg-success">bg-success</button>
+                            <button type="button" class="btn bg-info">bg-info</button>
+                            <button type="button" class="btn bg-warning">bg-warning</button>
+                            <button type="button" class="btn bg-danger">bg-danger</button>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Color --&#62;</li>
+                            <li><span class="name">.btn.bg-primary</span>{background:<span class="data">#409eff</span>;border-color:<span class="data">#409eff</span>;color:<span class="data">#fff</span>;}</li>
+                            <li><span class="name">.btn.bg-primary:hover</span>{background:<span class="data">#66b1ff</span>;border-color:<span class="data"> #66b1ff</span>;}</li>
+                            <li><span class="name">.btn.bg-success</span>{background:<span class="data">#67c23a</span>;border-color:<span class="data">#67c23a</span>;color:<span class="data">#fff</span>;}</li>
+                            <li><span class="name">.btn.bg-success:hover</span>{background:<span class="data">#85ce61</span>;border-color:<span class="data"> #85ce6</span>1;}</li>
+                            <li><span class="name">.btn.bg-info</span>{background:<span class="data">#909399</span>;border-color:<span class="data">#909399</span>;color:<span class="data">#fff</span>;}</li>
+                            <li><span class="name">.btn.bg-info:hover</span>{background:<span class="data">#a6a9ad</span>;border-color:<span class="data">#a6a9ad</span>;}</li>
+                            <li><span class="name">.btn.bg-warning</span>{background:<span class="data">#e6a23c</span>;border-color:<span class="data">#e6a23c</span>;color:<span class="data">#fff</span>;}</li>
+                            <li><span class="name">.btn.bg-warning:hover</span>{background:<span class="data">#ebb563</span>;border-color:<span class="data">#ebb563</span>;}</li>
+                            <li><span class="name">.btn.bg-danger</span>{background:<span class="data">#f56c6c</span>;border-color:<span class="data">#f56c6c</span>;color:<span class="data">#fff</span>;}</li>
+                            <li><span class="name">.btn.bg-danger:hover</span>{background:<span class="data">#f78989</span>;border-color:<span class="data">#f78989</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button-round -->
+                <div class="section" data-name="Button-round">
+                    <h2 class="title circle-type">Button Round</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Round</h3>
+                            <button type="button" class="btn btn-round">btn Btn-round</button>
+                            <button type="button" class="btn bg-primary btn-round">btn bg-primary btn-round</button>
+                            <button type="button" class="btn bg-success btn-round">btn bg-success btn-round</button>
+                            <button type="button" class="btn bg-info btn-round">btn bg-info btn-round</button>
+                            <button type="button" class="btn bg-warning btn-round">btn bg-warning btn-round</button>
+                            <button type="button" class="btn bg-danger btn-round">btn bg-danger btn-round</button>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Round --&#62;</li>
+                            <li><span class="name">.btn.btn-round</span>{border-radius:<span class="data">20px</span>;}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Button-disabled -->
+                <div class="section" data-name="Button-disabled">
+                    <h2 class="title circle-type">Button Disabled</h2>
+                    <div class="editer-wrap">
+                        <div class="ex-view">
+                            <h3>Disabled</h3>
+                            <button type="button" class="btn btn-disabled">btn btn-disabled</button>
+                            <button type="button" class="btn bg-primary btn-disabled">btn bg-primary btn-disabled</button>
+                            <button type="button" class="btn bg-success btn-disabled">btn bg-success btn-disabled</button>
+                            <button type="button" class="btn bg-info btn-disabled">btn bg-info btn-disabled</button>
+                            <button type="button" class="btn bg-warning btn-disabled">btn bg-warning btn-disabled</button>
+                            <button type="button" class="btn bg-danger btn-disabled">btn bg-danger btn-disabled</button>
+                        </div>
+                        <ul class="mt50">
+                            <li class="remark">&#60;!--  Disabled --&#62;</li>
+                            <li><span class="name">.btn.btn-disabled</span>{background-color:<span class="data">#fff</span>;border-color:<span class="data">#ebeef5</span>;color:<span class="data">#c0c4cc</span>;}</li>
+                            <li><span class="name">.btn.bg-primary.btn-disabled</span>{background:<span class="data">#66b1ff</span>;border-color:<span class="data"> #66b1ff</span>;}</li>
+                            <li><span class="name">.btn.bg-success.btn-disabled</span>{background:<span class="data">#85ce61</span>;border-color:<span class="data"> #85ce6</span>1;}</li>
+                            <li><span class="name">.btn.bg-info.btn-disabled</span>{background:<span class="data">#a6a9ad</span>;border-color:<span class="data">#a6a9ad</span>;}</li>
+                            <li><span class="name">.btn.bg-warning.btn-disabled</span>{background:<span class="data">#ebb563</span>;border-color:<span class="data">#ebb563</span>;}</li>
+                            <li><span class="name">.btn.bg-danger.btn-disabled</span>{background:<span class="data">#f78989</span>;border-color:<span class="data">#f78989</span>;}</li>
+                            <li><span class="name">.btn-disabled</span>{cursor:<span class="data">not-allowed</span>;}</li>
+                            <li><span class="name">.btn-disabled:active</span>{top:<span class="data">0</span>;left:<span class="data">0</span>;}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="inner"></div>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
